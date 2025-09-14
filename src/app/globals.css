@@ -1,27 +1,92 @@
+/* ==========================================================================
+   1. CSS Custom Properties (From Nexel)
+   ========================================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* --- Colors --- */
+  --dark-bg: #1a1a1a;
+  --primary-text: #ffffff;
+  --secondary-text: #919191;
+  --accent-color: #b0fa4f;
+  --services-text: #676767;
+  --footer-bg: #1d1f20;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* --- Pill Colors --- */
+  --pill-color-blue: #acd9e9;
+  --pill-color-purple: #d0c0e9;
+  --pill-color-teal: #7bddb8;
+  --pill-color-orange: #ff7447;
+
+  /* --- Social Media Colors --- */
+  --social-media-bg1: #d9d9d9;
+  --social-media-bg2: #c0c2cb;
+
+  /* --- Methodology Card Colors --- */
+  --card-color-purple: #d0c0e9;
+  --card-text-purple: #b39cd7;
+  --card-color-green: #b0fa4f;
+  --card-text-green: #9bcf56;
+  --card-color-teal: #7bddb8;
+  --card-text-teal: #6ec1a2;
+  --card-color-blue: #d4e0ef;
+  --card-text-blue: #a9bad0;
+  --card-color-orange: #e98665;
+  --card-text-orange: #cb542d;
+
+  /* --- Layout --- */
+  --nav-height: 80px;
+  --container-padding: 0 2.8rem;
+
+  /* --- Breakpoints (for reference) --- */
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+
+  /* ==========================================================================
+     2. Pre-calculated Font Sizes
+     ========================================================================== */
+
+  --font-size-6xl: clamp(6.2rem, -1.8rem + 16.667vw, 13.2rem); /* 200px */
+  --font-size-5xl: clamp(4rem, 2.857rem + 2.381vw, 5rem); /* 96px */
+  --font-size-4-5xl: clamp(2.8rem, 0.638rem + 4.505vw, 4.7rem); /* 80px */
+  --font-size-4xl: clamp(2.5rem, 0.938rem + 3.255vw, 4.4rem); /* 72px */
+  --font-size-3xl: clamp(2.4rem, 1.114rem + 2.679vw, 3.6rem); /* 64px */
+  --font-size-2xl: clamp(1.9rem, 1.424rem + 0.992vw, 2.3rem); /* 48px */
+  --font-size-xl: clamp(1.5rem, 0.071rem + 2.976vw, 2.3rem); /* 40px */
+  --font-size-2lg: clamp(1.3rem, 1.062rem + 0.496vw, 1.5rem); /* 32px */
+  --font-size-lg: clamp(0.85rem, -0.093rem + 1.964vw, 1.25rem); /* 24px */
+  --font-size-base: 1.6rem; /* Static size */
+  --font-size-sm: 0.8rem; /* Static size */
+  --font-size-xs: 0.7rem; /* Static size */
+  --font-size-xss: 0.6rem; /* Static size */
+  --font-size-xxs: 0.5rem; /* Static size */
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  max-width: 100%;
+  background-color: var(--dark-bg);
+  color: var(--primary-text);
+  font-size: var(--font-size-base);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family:
+    var(--font-clovergrotesk),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+main {
+  padding-top: 0rem;
+  position: relative;
 }
 
 * {
@@ -39,4 +104,30 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* Nexel-style View Transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: transform, opacity, clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 10000;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
 }

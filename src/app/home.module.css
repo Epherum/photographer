@@ -1,0 +1,118 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1b4b 0%, #581c87 50%, #be185d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.main {
+  text-align: center;
+  max-width: 64rem;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: clamp(4rem, 10vw, 8rem);
+  }
+}
+
+.subtitle {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: white;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: clamp(3rem, 8vw, 6rem);
+  }
+}
+
+.animationSection {
+  text-align: center;
+}
+
+.animationTitle {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: white;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .animationTitle {
+    font-size: clamp(3rem, 8vw, 6rem);
+  }
+}
+
+.animationText {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.parallaxSection {
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.parallaxTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: white;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.parallaxImageContainer {
+  width: 100%;
+  height: 60vh;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.parallaxText {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  margin-top: 3rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .parallaxImageContainer {
+    height: 40vh;
+    margin: 2rem 0;
+  }
+
+  .parallaxText {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+}

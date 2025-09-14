@@ -1,0 +1,103 @@
+.container {
+  min-height: 100vh;
+  padding: 0 2rem;
+  background: #000;
+  color: #fff;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.backLink {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: #fff;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.details p {
+  margin: 0;
+}
+
+.details strong {
+  color: #fff;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.caption {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .details {
+    align-items: center;
+  }
+}
