@@ -8,31 +8,54 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+
 }
 
 .subtext {
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
+  font-family: var(--font-nunito);
+  font-size: 16px;
   font-weight: 300;
-  letter-spacing: 3px;
   color: white;
-  margin: 0 0 40px 0;
+  margin: 0 50px 40px 0;
+  text-align: center;
   text-transform: uppercase;
+}
+
+.headlineContainer {
+  position: relative;
+  margin-bottom: 6rem;
 }
 
 .headline {
-  font-family: 'Arial', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 300;
-  letter-spacing: 4px;
+  font-family: var(--font-silk);
+  font-size: var(--font-size-4xl);
+  font-weight: 200;
+  max-width: 1400px;
+  text-align: center;
+  line-height: 1.4;
   color: white;
-  margin: 0 0 60px 0;
-  line-height: 1.2;
-  text-transform: uppercase;
+  margin-bottom: 8rem;
+}
+
+.headline span {
+  font-family: var(--font-silk);
+  font-weight: 200;
+  font-style: italic;
+}
+
+.overlayLogo {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: auto;
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .videoContainer {
-  margin: 0 0 60px 0;
+  margin: 0 0 50px 0;
   display: flex;
   justify-content: center;
 }
@@ -41,42 +64,39 @@
   width: 100%;
   max-width: 800px;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .description {
-  font-family: 'Arial', sans-serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-sm);
   font-weight: 300;
   color: white;
-  margin: 0 0 50px 0;
+  margin: 0 0 40px 0;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
-  font-style: italic;
+  line-height: 1.5;
 }
 
 .aboutButton {
   background: transparent;
-  border: 2px solid #B8A38B;
+  border: 1px solid #B8A38B;
   color: #B8A38B;
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-sm);
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 15px 40px;
+  padding: 25px 30px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .aboutButton:hover {
   background: #B8A38B;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(184, 163, 139, 0.3);
 }
 
 @media (max-width: 768px) {

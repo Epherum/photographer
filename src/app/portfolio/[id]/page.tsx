@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useParams } from "next/navigation";
-import Navigation from "@/components/Navigation";
 import { easings } from "@/utils/easings";
 import { projects } from "@/data/projects";
 import TransitionLink from "@/components/TransitionLink";
@@ -44,7 +43,6 @@ export default function ProjectPage() {
   if (!project) {
     return (
       <>
-        <Navigation />
         <div className={styles.container}>
           <div className={styles.main}>
             <h1>Project not found</h1>
@@ -57,7 +55,6 @@ export default function ProjectPage() {
 
   return (
     <>
-      <Navigation />
       <div className={styles.container}>
         <motion.main
           className={styles.main}

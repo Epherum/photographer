@@ -1,36 +1,43 @@
 /* ==========================================================================
-   1. CSS Custom Properties (From Nexel)
+   1. CSS Custom Properties (Updated for Photographer Website)
    ========================================================================== */
 :root {
-  /* --- Colors --- */
+  /* --- Photographer Website Colors --- */
   --dark-bg: #1a1a1a;
+  --studio-bg: #343434;
   --primary-text: #ffffff;
-  --secondary-text: #919191;
-  --accent-color: #b0fa4f;
-  --services-text: #676767;
-  --footer-bg: #1d1f20;
+  --secondary-text: #666666;
+  --accent-color: #B8A38B;
+  --testimonial-bg: #f8f8f8;
+  --footer-bg: #1a1a1a;
 
-  /* --- Pill Colors --- */
-  --pill-color-blue: #acd9e9;
-  --pill-color-purple: #d0c0e9;
-  --pill-color-teal: #7bddb8;
-  --pill-color-orange: #ff7447;
+  /* -- Colors (Commented Out) --- */
+  /* --secondary-text: #919191; */
+  /* --accent-color: #b0fa4f; */
+  /* --services-text: #676767; */
+  /* --footer-bg: #1d1f20; */
 
-  /* --- Social Media Colors --- */
-  --social-media-bg1: #d9d9d9;
-  --social-media-bg2: #c0c2cb;
+  /* --- Pill Colors (Unused - Commented Out) --- */
+  /* --pill-color-blue: #acd9e9; */
+  /* --pill-color-purple: #d0c0e9; */
+  /* --pill-color-teal: #7bddb8; */
+  /* --pill-color-orange: #ff7447; */
 
-  /* --- Methodology Card Colors --- */
-  --card-color-purple: #d0c0e9;
-  --card-text-purple: #b39cd7;
-  --card-color-green: #b0fa4f;
-  --card-text-green: #9bcf56;
-  --card-color-teal: #7bddb8;
-  --card-text-teal: #6ec1a2;
-  --card-color-blue: #d4e0ef;
-  --card-text-blue: #a9bad0;
-  --card-color-orange: #e98665;
-  --card-text-orange: #cb542d;
+  /* --- Social Media Colors (Unused - Commented Out) --- */
+  /* --social-media-bg1: #d9d9d9; */
+  /* --social-media-bg2: #c0c2cb; */
+
+  /* --- Methodology Card Colors (Unused - Commented Out) --- */
+  /* --card-color-purple: #d0c0e9; */
+  /* --card-text-purple: #b39cd7; */
+  /* --card-color-green: #b0fa4f; */
+  /* --card-text-green: #9bcf56; */
+  /* --card-color-teal: #7bddb8; */
+  /* --card-text-teal: #6ec1a2; */
+  /* --card-color-blue: #d4e0ef; */
+  /* --card-text-blue: #a9bad0; */
+  /* --card-color-orange: #e98665; */
+  /* --card-text-orange: #cb542d; */
 
   /* --- Layout --- */
   --nav-height: 80px;
@@ -42,23 +49,23 @@
   --breakpoint-xl: 1440px;
 
   /* ==========================================================================
-     2. Pre-calculated Font Sizes
+     2. Pre-calculated Font Sizes (Active sizes for photographer website)
      ========================================================================== */
 
-  --font-size-6xl: clamp(6.2rem, -1.8rem + 16.667vw, 13.2rem); /* 200px */
-  --font-size-5xl: clamp(4rem, 2.857rem + 2.381vw, 5rem); /* 96px */
-  --font-size-4-5xl: clamp(2.8rem, 0.638rem + 4.505vw, 4.7rem); /* 80px */
-  --font-size-4xl: clamp(2.5rem, 0.938rem + 3.255vw, 4.4rem); /* 72px */
-  --font-size-3xl: clamp(2.4rem, 1.114rem + 2.679vw, 3.6rem); /* 64px */
-  --font-size-2xl: clamp(1.9rem, 1.424rem + 0.992vw, 2.3rem); /* 48px */
-  --font-size-xl: clamp(1.5rem, 0.071rem + 2.976vw, 2.3rem); /* 40px */
-  --font-size-2lg: clamp(1.3rem, 1.062rem + 0.496vw, 1.5rem); /* 32px */
-  --font-size-lg: clamp(0.85rem, -0.093rem + 1.964vw, 1.25rem); /* 24px */
-  --font-size-base: 1.6rem; /* Static size */
-  --font-size-sm: 0.8rem; /* Static size */
-  --font-size-xs: 0.7rem; /* Static size */
-  --font-size-xss: 0.6rem; /* Static size */
-  --font-size-xxs: 0.5rem; /* Static size */
+  --font-size-6xl: clamp(6.2rem, -1.8rem + 16.667vw, 13.2rem); /*200px*/
+  --font-size-5xl: clamp(7rem, 4.857rem + 4.381vw, 8rem); /* 96px - Unused */
+  /* --font-size-4-5xl: clamp(2.8rem, 0.638rem + 4.505vw, 4.7rem); // 80px - Unused */
+  --font-size-4xl: clamp(2.5rem, 0.938rem + 3.255vw, 4.4rem); /* 72px - Used for "Masterful Photography" */
+  /* --font-size-3xl: clamp(2.4rem, 1.114rem + 2.679vw, 3.6rem); // 64px - Unused */
+  --font-size-2xl: clamp(1.9rem, 1.424rem + 0.992vw, 2.3rem); /* 48px - Used for menu text */
+  /* --font-size-xl: clamp(1.5rem, 0.071rem + 2.976vw, 2.3rem); // 40px - Unused */
+  --font-size-2lg: clamp(1.3rem, 1.062rem + 0.496vw, 1.5rem); /* 32px - Used for testimonial text */
+  /* --font-size-lg: clamp(0.85rem, -0.093rem + 1.964vw, 1.25rem); // 24px - Unused */
+  --font-size-base: 1.6rem; /* 16px - Used for subtexts and buttons */
+  --font-size-sm: 0.8rem;  
+  --font-size-xs: 0.7rem;  
+  --font-size-xss: 0.6rem;  
+  --font-size-xxs: 0.5rem;  
 }
 
 html,
@@ -71,7 +78,7 @@ body {
 
 body {
   font-family:
-    var(--font-clovergrotesk),
+    var(--font-nunito),
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -105,6 +112,7 @@ a {
     color-scheme: dark;
   }
 }
+
 
 /* Nexel-style View Transitions */
 ::view-transition-old(root),

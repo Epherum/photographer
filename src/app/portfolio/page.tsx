@@ -1,10 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
 import { easings } from "@/utils/easings";
-import { projects } from "@/data/projects";
-import TransitionLink from "@/components/TransitionLink";
 import styles from "./portfolio.module.css";
 
 const containerVariants = {
@@ -27,48 +25,117 @@ const itemVariants = {
   }
 };
 
+const projects = Array.from({ length: 9 }, (_, i) => ({
+  id: i + 1,
+  title: `Project ${i + 1}`,
+  image: `/images/portfolio/projects/${i + 1}.webp`
+}));
+
 export default function Portfolio() {
+  const [activeFilter, setActiveFilter] = useState("weddings");
+
   return (
     <>
-      <Navigation />
-      <div className={styles.container}>
-        <motion.main
-          className={styles.main}
+      {/* Hero Video Section */}
+      <section className={styles.hero}>
+        <div className={styles.videoContainer}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className={styles.heroVideo}
+          >
+            <source src="/images/portfolio/portfolio-video.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className={styles.heroOverlay}>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>PORTFOLIO</h1>
+            <p className={styles.heroSubtext}>
+              In a single frame, emotions linger— a glance becomes eternal, a story unfolds, and the beauty of now lives on forever.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Films Section */}
+      <section className={styles.filmsSection}>
+        <h2 className={styles.filmsTitle}><span>Our</span> FILMS</h2>
+        <div className={styles.videoGrid}>
+          <div className={styles.videoItem}>
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Film 1"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className={styles.videoItem}>
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Film 2"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className={styles.videoItem}>
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Film 3"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Gallery Section */}
+      <section className={styles.gallerySection}>
+        <div className={styles.filterButtons}>
+          <button
+            className={`${styles.filterButton} ${activeFilter === "weddings" ? styles.active : ""}`}
+            onClick={() => setActiveFilter("weddings")}
+          >
+            WEDDINGS & ENGAGEMENT
+          </button>
+          <button
+            className={`${styles.filterButton} ${activeFilter === "fashion" ? styles.active : ""}`}
+            onClick={() => setActiveFilter("fashion")}
+          >
+            FASHION & LIFESTYLE
+          </button>
+        </div>
+
+        <motion.div
+          className={styles.projectGrid}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 className={styles.title} variants={itemVariants}>
-            Portfolio
-          </motion.h1>
+          {projects.map((project) => (
+            <motion.div
+              key={project.id}
+              className={styles.projectItem}
+              variants={itemVariants}
+            >
+              <div className={styles.projectImageContainer}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.projectImage}
+                />
+              </div>
+              <h3 className={styles.projectTitle}>{project.title}</h3>
+              <button className={styles.viewGalleryButton}>View gallery</button>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
 
-          <motion.div className={styles.grid} variants={containerVariants}>
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                className={styles.projectCard}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <TransitionLink href={`/portfolio/${project.id}`}>
-                  <div className={styles.imageContainer}>
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      className={styles.thumbnail}
-                    />
-                    <div className={styles.overlay}>
-                      <h3 className={styles.projectTitle}>{project.title}</h3>
-                      <p className={styles.projectDescription}>{project.description}</p>
-                    </div>
-                  </div>
-                </TransitionLink>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.main>
-      </div>
     </>
   );
 }

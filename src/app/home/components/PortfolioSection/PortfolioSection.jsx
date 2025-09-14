@@ -1,4 +1,5 @@
 "use client";
+import TransitionLink from '@/components/TransitionLink';
 import styles from './PortfolioSection.module.css';
 
 const PortfolioSection = () => {
@@ -10,20 +11,22 @@ const PortfolioSection = () => {
         <div className={styles.imageGrid}>
           <div className={styles.topRow}>
             <div className={styles.imageWrapper}>
-              <img src="/test.jpg" alt="Portfolio 1" />
+              <img src="/images/home/portfolio/1.webp" alt="Portfolio 1" />
             </div>
             <div className={styles.imageWrapper}>
-              <img src="/test.jpg" alt="Portfolio 2" />
+              <img src="/images/home/portfolio/2.webp" alt="Portfolio 2" />
             </div>
           </div>
           <div className={styles.bottomRow}>
             <div className={styles.imageWrapper}>
-              <img src="/test.jpg" alt="Portfolio 3" />
+              <img src="/images/home/portfolio/3.webp" alt="Portfolio 3" />
             </div>
           </div>
         </div>
 
-        <button className={styles.portfolioButton}>VIEW FULL PORTFOLIO</button>
+        <TransitionLink href="/portfolio" className={styles.portfolioButton}>
+          VIEW FULL PORTFOLIO
+        </TransitionLink>
       </div>
     </section>
   );

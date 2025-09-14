@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import AnimatedWord from "@/components/animation/AnimatedWord";
-import Navigation from "@/components/Navigation";
 import { easings } from "@/utils/easings";
 import styles from "./about.module.css";
 
@@ -27,7 +26,6 @@ const cardVariants = {
 export default function About() {
   return (
     <>
-      <Navigation />
       <div className={styles.container}>
         <main className={styles.main}>
           <motion.h1

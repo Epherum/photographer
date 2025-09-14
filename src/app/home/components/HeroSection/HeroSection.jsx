@@ -5,9 +5,15 @@ import styles from './HeroSection.module.css';
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    '/test.jpg', // Using the existing test image as placeholder
-    '/test.jpg', // You'll replace these with actual slider images
-    '/test.jpg'
+    '/images/home/slider/1.webp',
+    '/images/home/slider/2.webp',
+    '/images/home/slider/3.webp',
+    '/images/home/slider/4.webp',
+    '/images/home/slider/5.webp',
+    '/images/home/slider/6.webp',
+    '/images/home/slider/7.webp',
+    '/images/home/slider/8.webp',
+    '/images/home/slider/9.webp'
   ];
 
   useEffect(() => {

@@ -37,6 +37,7 @@ function pageAnimate() {
 
 interface TransitionLinkProps extends LinkProps {
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  className?: string;
 }
 
 export default function TransitionLink({

@@ -12,7 +12,7 @@ const TestimonialSection = () => {
           </blockquote>
         </div>
         <div className={styles.imageContent}>
-          <img src="/test.jpg" alt="Testimonial" />
+          <img src="/images/home/testimonial.webp" alt="Testimonial" />
         </div>
       </div>
     </section>

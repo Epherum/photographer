@@ -1,22 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ViewTransitions } from "next-view-transitions";
 import SmoothScrollWrapper from "@/utils/SmoothScrollWrapper";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Footer from "@/components/Footer";
+import Nav from "@/components/Nav";
+import { silk, nunito } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Nexel Test Project",
-  description: "Test implementation of Nexel's tech stack",
+  title: "Yesser Barka - Photographer",
+  description: "Global Luxury Destination Wedding & Editorial Photographer",
 };
 
 export default function RootLayout({
@@ -29,11 +21,13 @@ export default function RootLayout({
       <ViewTransitions>
         <body
           suppressHydrationWarning
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${silk.variable} ${nunito.variable} antialiased`}
         >
+          <Nav />
           <main>
             <SmoothScrollWrapper>{children}</SmoothScrollWrapper>
           </main>
+          <Footer />
         </body>
       </ViewTransitions>
     </html>

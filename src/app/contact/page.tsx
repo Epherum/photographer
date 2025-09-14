@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import AnimatedWord from "@/components/animation/AnimatedWord";
-import Navigation from "@/components/Navigation";
 import { easings } from "@/utils/easings";
 import styles from "./contact.module.css";
 
@@ -60,7 +59,6 @@ export default function Contact() {
 
   return (
     <>
-      <Navigation />
       <div className={styles.container}>
         <main className={styles.main}>
           <motion.h1

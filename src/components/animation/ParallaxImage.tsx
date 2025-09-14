@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./ParallaxImage.module.css";
 
 // --- Internal Component for Parallax Logic ---
-const ParallaxImage = ({ parallaxAmount, imageScale, ...rest }: any) => {
+const ParallaxImage = ({ parallaxAmount, imageScale, ...rest }: { parallaxAmount: number; imageScale?: number; [key: string]: unknown }) => {
   const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -36,7 +36,7 @@ const ParallaxImage = ({ parallaxAmount, imageScale, ...rest }: any) => {
         // 3. Apply the final calculated scale and the y-transform.
         style={{ y, scale: finalScale }}
       >
-        <NextImage {...rest} fill className={styles.image} />
+        <NextImage {...(rest as NextImageProps)} fill className={styles.image} />
       </motion.div>
     </div>
   );
