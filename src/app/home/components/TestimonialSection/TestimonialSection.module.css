@@ -71,6 +71,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block; /* Add this line to fix the gap */
 }
 
 @media (max-width: 1024px) {
