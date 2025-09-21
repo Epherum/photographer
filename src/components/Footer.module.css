@@ -14,7 +14,6 @@
 .logo {
   width: 180px;
   height: auto;
-  filter: invert(1);
 }
 
 .contactButton {

@@ -18,7 +18,6 @@ const Nav = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Only close if clicking on the overlay, not the menu itself
       if (event.target instanceof HTMLElement && event.target.classList.contains(styles.overlay)) {
         closeMenu();
       }
@@ -26,25 +25,38 @@ const Nav = () => {
 
     if (menuOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      document.body.style.overflow = 'unset';
     };
   }, [menuOpen]);
 
   return (
     <nav className={styles.nav}>
-      <div className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`} onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-        {menuOpen && <span className={styles.closeText}>close</span>}
+      {/* Container for burger icon and close text for proper alignment */}
+      <div className={styles.menuToggle} onClick={toggleMenu}>
+        <div className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        {/* Animated CLOSE text using Framer Motion */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.span
+              className={styles.closeText}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              CLOSE
+            </motion.span>
+          )}
+        </AnimatePresence>
       </div>
+
 
       <div className={styles.logo}>
         <img src="/yesser-Logo.svg" alt="Yesser Barka" />
@@ -85,7 +97,7 @@ const Nav = () => {
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
-              transition={{ type: 'tween', duration: 0.4, ease: 'easeInOut' }}
+              transition={{ type: 'tween', duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <div className={styles.menuContent}>
                 <motion.div
