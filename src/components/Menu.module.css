@@ -1,0 +1,156 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  cursor: pointer;
+}
+
+/* Slide menu */
+.slideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 80vw;
+  background: #5E5C4A;
+  z-index: 60;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.menuContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 30px;
+  height: 20px;
+}
+
+.burger span {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s ease-in-out;
+}
+
+.burger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.closeText {
+  font-family: var(--font-silk);
+  font-size: var(--font-size-xxs);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menuLinks a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-silk);
+  font-size: var(--font-size-xl);
+  font-weight: 300;
+  letter-spacing: 2px;
+  transition: opacity 0.3s ease;
+}
+
+.menuLinks a:hover {
+  opacity: 0.7;
+}
+
+.menuFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.menuLogo {
+  display: flex;
+  justify-content: center;
+}
+
+.menuLogo img {
+  height: 80px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.menuSocials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.menuSocials a {
+  color: white;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.menuSocials a:hover {
+  opacity: 0.7;
+}
+
+.menuSocials svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .slideMenu {
+    width: 300px;
+    max-width: 85vw;
+  }
+
+  .menuLinks a {
+    font-size: var(--font-size-xl);
+  }
+}
